@@ -1,0 +1,25 @@
+<form [formGroup]="loginForm">
+    <div>
+        <label>Email</label>
+        <input type="text" name="email" id="email" formControlName="email" />
+    </div>
+
+    <div *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].errors.email&&loginClicked">
+        <p>Error in Email Format </p>
+    </div> 
+    <div *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].errors.required &&loginClicked">
+        <p>Email should be entered</p>
+    </div> 
+
+    <div>
+        <label>password</label>
+        <input type="password" name="password" id="password" formControlName="password" />
+    </div>
+    <div *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].errors.required && loginClicked">
+        <p>Password Required</p>
+    </div> 
+    <div *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].errors.maxlength && loginClicked">
+        <p>Length should be 7</p>
+    </div> 
+    <button type="submit" (click)="Login()">Login</button>
+</form>

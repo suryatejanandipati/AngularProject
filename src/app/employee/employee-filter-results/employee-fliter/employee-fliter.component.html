@@ -1,0 +1,16 @@
+<p>employee-fliter works!</p>
+<form [formGroup]="newForm" (submit)="filterProducts()">
+    <label>Name</label>
+    <input  type="text" 
+            id="name" 
+            name="name" 
+            formControlName="name">
+
+    <label>Price</label>
+    <input  type="number" 
+            id="price" 
+            name="price" 
+            formControlName="price">
+    <button type="submit">Filter</button>
+  </form>
+
